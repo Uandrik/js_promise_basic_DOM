@@ -35,5 +35,5 @@ function errorHandler() {
   body.appendChild(errorMessage);
 }
 
-promise1.then(successHandler).catch(errorHandler);
-promise2.then(successHandler).catch(errorHandler);
+promise1.then(successHandler, errorHandler);
+promise2.then(successHandler, errorHandler);
