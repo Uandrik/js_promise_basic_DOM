@@ -18,7 +18,7 @@ const promise2 = new Promise((resolve, reject) => {
 function successHandler() {
   const message = document.createElement('div');
 
-  message.classList = 'message';
+  message.classList.add('message');
 
   message.textContent = 'Promise was resolved!';
 
@@ -28,12 +28,13 @@ function successHandler() {
 function errorHandler() {
   const errorMessage = document.createElement('div');
 
-  errorMessage.classList = 'message error-message';
+  errorMessage.classList.add('message');
+  errorMessage.classList.add('error-message');
 
   errorMessage.textContent = 'Promise was rejected!';
 
   body.appendChild(errorMessage);
 }
 
-promise1.then(successHandler, errorHandler);
-promise2.then(successHandler, errorHandler);
+promise1.then(successHandler);
+promise2.catch(errorHandler);
